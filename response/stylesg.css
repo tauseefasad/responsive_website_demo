@@ -1,0 +1,227 @@
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 50px;
+}
+
+body{
+    min-height: 100vh;
+    background: black;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+.carousel-wrapper {
+    height: 400px;
+    position: relative;
+    width: 800px;
+    display: block;
+    
+    margin: 50px auto;
+    border: 2px solid black;
+
+}
+
+.carousel-item{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 50px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
+
+}
+
+.arrow{
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 12px;
+}
+
+.arrow-prev {
+    left: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+}
+
+.arrow-next {
+    right: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+[id^= "item"] {
+    display: none;
+
+}
+
+.item-1 {
+    z-index: 2;
+    opacity: 1;
+    background: url(https://www.witf.io/wp-content/uploads/2021/02/groundhog-day-2021-1-1620x1080.jpg);
+    background-size: cover;
+}
+
+.item-2 {
+   
+    background: url(https://nypost.com/wp-content/uploads/sites/2/2019/01/punxsutawney-phil-ground-hog-day.jpg?quality=75&strip=all);
+    background-size: cover;
+}
+
+.item-3 {
+   
+    background: url(https://media.thv11.com/assets/ACCUWEATHER/images/861caa14-6c60-4405-b44a-62a4cce980f5/861caa14-6c60-4405-b44a-62a4cce980f5_1920x1080.jpg);
+    background-size: cover;
+}
+
+*:target ~ .item-1{
+    opacity: 0;
+}
+
+#item-1:target ~ .item-1 {
+    opacity: 1;
+}
+
+#item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+    z-index: 3;
+    opacity: 1;
+
+}
+
+
+
+
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: black;
+    box-shadow: 0 5px 10px black;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo{
+    font-weight: bolder;
+    font-size: 25px;
+    color: white;
+}
+
+header .navbar ul{
+    list-style: none;
+}
+
+header .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+header .navbar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color: green;
+    display: block;
+}
+
+header .navbar ul li a:hover{
+    background: white;
+    color: black;
+}
+
+
+header .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: white;
+    display: none;
+}
+
+header .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+header .navbar ul li ul li ul{
+    left: 200px;
+    top: 0;
+}
+
+header .navbar ul li:hover > ul{
+    display: initial;
+}
+
+#menu-bar{
+    display: none;
+}
+
+header label{
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+@media(max-width:991px){
+
+    header{
+        padding: 20px;
+
+    }
+
+    header label{
+        display: initial;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: black;
+        border-top: 1px solid white;
+        display: none;
+    }
+
+    header .navbar ul li{
+        width: 100%;
+    }
+
+    header .navbar ul li ul{
+        position: relative;
+        width:100%;
+    }
+
+    header .navbar ul li ul li{
+        background: black;
+    }
+
+    header .navbar ul li ul li ul{
+        width: 100%;
+        left: 0;
+    }
+
+    #menu-bar:checked ~ .navbar{
+        display: initial;
+    }
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 200px 0;
+}
+
+

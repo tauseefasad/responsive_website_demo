@@ -1,0 +1,203 @@
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 50px;
+}
+
+body{
+    min-height: 100vh;
+    background: url(https://static01.nyt.com/images/2021/02/02/multimedia/02storm-briefing-groundhog/02storm-briefing-groundhog-videoSixteenByNine3000.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: black;
+    box-shadow: 0 5px 10px black;
+    padding: 10px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo{
+    font-weight: bolder;
+    font-size: 25px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header .navbar ul{
+    list-style: none;
+}
+
+header .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+header .navbar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color: green;
+    display: block;
+}
+
+header .navbar ul li a:hover{
+    background: white;
+    color: black;
+}
+
+
+header .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: white;
+    display: none;
+}
+
+header .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+header .navbar ul li ul li ul{
+    left: 200px;
+    top: 0;
+}
+
+header .navbar ul li:hover > ul{
+    display: initial;
+}
+
+#menu-bar{
+    display: none;
+}
+
+header label{
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+@media(max-width:991px){
+
+    header{
+        padding: 20px;
+
+    }
+
+    header label{
+        display: initial;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: black;
+        border-top: 1px solid white;
+        display: none;
+    }
+
+    header .navbar ul li{
+        width: 100%;
+    }
+
+    header .navbar ul li ul{
+        position: relative;
+        width:100%;
+    }
+
+    header .navbar ul li ul li{
+        background: black;
+    }
+
+    header .navbar ul li ul li ul{
+        width: 100%;
+        left: 0;
+    }
+
+    #menu-bar:checked ~ .navbar{
+        display: initial;
+    }
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 200px 0;
+}
+
+
+.col-1{
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;
+    
+}
+
+.col-1 h2{
+    font-size: 50px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.col-1 h3{
+    font-size: 30px;
+    color: white;
+    font-weight: 100;
+    margin: 20px 0 10px;
+    background: linear-gradient(rgba(5,9,30,0.7),rgba(5,9,30,0.7));
+}
+
+.col-1 p{
+    font-size: 20px;
+    color: white;
+    margin: 20px o;
+    background: linear-gradient(rgba(5,9,30,0.7),rgba(5,9,30,0.7));
+
+}
+
+
+
+
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    height: auto;
+    width: auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 40px;
+    color: white;
+}
+
+.footer-bottom h3{
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 0.1rem;
+    text-align: center;
+    align-items: center;
+}
+.footer-bottom{
+    background: black;
+    width: 100vw;
+    height: 100px;
+    padding: 20px 0;
+    text-align: center;
+}
+
